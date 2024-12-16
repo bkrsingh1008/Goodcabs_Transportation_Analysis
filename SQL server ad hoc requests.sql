@@ -12,6 +12,7 @@ EXEC sp_rename 'fact_trips.distance_travelled(km)', 'distance_travelled_km', 'CO
 
 
 -- Business Request-1 City-Level fare and trip summary report --
+
 with cte as(
 select 
 dc.city_name, 
@@ -28,6 +29,7 @@ concat(round((total_trips * 100 / (SELECT SUM(total_trips) FROM cte)),2),'%') as
 from cte;
 
 -- Business Request-2 Monthly City-Level Trips Target Performance Report --
+
 with actual_trips as (
 select city_id, DATENAME(month, date) as 'month_name', DATENAME(year, date) as 'year', COUNT(*) as 'actual_trips'
 from fact_trips
@@ -54,6 +56,7 @@ from result_query c3 join dim_city dc
 on c3.city_id = dc.city_id;
 
 -- Business Request-3 City-Level Repeat passenger trip frequency report --
+
 with cte as (
 select dc.city_id, td.trip_count, SUM(td.repeat_passenger_count) as 'repeat_passenger_per_trips'
 from dim_city dc join dim_repeat_trip_distribution td
@@ -77,6 +80,7 @@ group by c1.city_id
 select * from cte1;
 
 -- Business Request-4 Identify cities with highest and lowest total new passengers --
+
 with cte as (
 select dc.city_name, SUM(new_passengers) as 'total_new_passengers'
 from fact_passenger_summary fps join dim_city dc on
@@ -93,7 +97,9 @@ select c2.city_name, c2.total_new_passengers, case when highest_rank <=3 then 'T
 from cte1 c2
 where highest_rank <=3 or lowest_rank <=3;
 
+
 -- Business Request-5 Identify month with highest revenue for each city --
+
 with cte as (
 select city_id, SUM(fare_amount) as 'total_revenue'
 from fact_trips
@@ -121,7 +127,9 @@ RANK() over(partition by city_name order by revenue desc) as 'rnk'
 from cte3) as A
 where A.rnk = 1;
 
+
 -- Business Request-6 Repeat Passenger Rate Analysis --
+
 with cte as (
 select city_id, DATENAME(month, month) as 'month', repeat_passengers, total_passengers,
 cast(round((repeat_passengers*100/total_passengers),2) as decimal(10,2)) as 'repeat_passenger_rate(%)'
