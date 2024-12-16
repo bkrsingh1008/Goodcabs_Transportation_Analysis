@@ -1,12 +1,11 @@
 # Goodcabs_Transportation_Analysis
 
-Project Description:
+Project Description
 -----------------------
 Goodcabs is a two-year-old cab service that has made a significant impact in tier-2 cities across India. Their commitment to supporting local drivers and providing excellent service has fueled their growth. In 2024, the company aims to achieve ambitious targets for performance and customer satisfaction.
 
-📊 Project Focus:
+📊 Project Focus
 -------------------------
---------------------------
 The goal was to analyze key metrics such as:
 
 ✅ Trip Volume 🚖
@@ -19,18 +18,16 @@ The goal was to analyze key metrics such as:
 
 ✅ New vs Repeat Passengers 👥
 
-🛠️ Tools & Techniques Used:
+🛠️ Tools & Techniques Used
 ------------------------------
--------------------------------
 📊 Power BI for dynamic dashboards 
 
 💻 SQL for data queries 
 
 🧹📈 Data Cleaning & Visualization 
 
-🔍 Approach:
+🔍 Approach
 -------------------
---------------------
 1️⃣ Thoroughly reviewed metadata and datasets to establish a solid foundation for analysis.
 
 2️⃣ Addressed primary and secondary questions using SQL and Power BI.
@@ -39,8 +36,7 @@ The goal was to analyze key metrics such as:
 
 4️⃣ Responded to business queries from ‘ad-hoc requests.pdf’ using SQL, exploring concepts like CTEs, window functions, and aggregate functions.
 
-🧠 Key Learnings:
-------------------------
+🧠 Key Learnings
 ------------------------
 🔎 Enhanced skills in metadata analysis and pattern recognition.
 
@@ -50,7 +46,6 @@ The goal was to analyze key metrics such as:
 
 💡 Learned to transform raw data into meaningful, actionable insights.
 
-Dashboard:
+Dashboard
 -------------
---------------
 https://app.powerbi.com/view?r=eyJrIjoiOTIyMTcxMWYtZjM2NC00NmVmLWFkZjYtOTA5OTgyNTdjZjVmIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9
